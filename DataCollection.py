@@ -92,13 +92,6 @@ class DataCollection:
         return False    
 
     @staticmethod
-    def selectFeatures(dataFrame):
-        #use feature selection/prioritization methods
-        return dataFrame
-
-
-
-    @staticmethod
     def csvToSet(csvFile):        
         recordSet=set()
         with open(csvFile, 'rt') as csvFileRead:
