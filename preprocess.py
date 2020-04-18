@@ -1,6 +1,6 @@
 #Name: Shlok Gopalbhai Gondalia
 #Email: shlok@rams.colostate.edu
-#Date: Friday 10, April
+#Date: Saturday 18, April
 
 import sys
 import pandas as pd
@@ -41,7 +41,8 @@ for i in columns_list:
         output_first_row.append("b" + str(i) + str(j))
 
 #Open a csv file for writing
-output_file = open(file_Name + '_' + PGN + '_' + SA + '_' + columns + '.csv', 'w', newline = '')
+output_file_name = file_Name[:-4] + '_' + PGN + '_' + SA + '_' + columns + '.csv'
+output_file = open(output_file_name, 'w', newline = '')
 writer = csv.writer(output_file)
 
 #Writes row to the CSV file
