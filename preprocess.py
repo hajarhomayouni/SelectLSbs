@@ -25,13 +25,13 @@ columns_list = []
 for i in range (0, len(columns), 2):
     columns_list.append(int(columns[i+1:i+2]))
 
-#Reading the Scores CSV File and converting it to SQL Table for better reading
-db=sqlite3.connect("scores.sqlite")
+#Reading the Input CSV File and converting it to SQL Table for better reading
+db=sqlite3.connect("preprocess.sqlite")
 cursor = db.cursor()
-cursor.execute("DROP TABLE IF EXISTS scores_sq")
-entire_data = pd.read_csv(file_Name).to_sql('scores_sq', con=db);
+cursor.execute("DROP TABLE IF EXISTS preprocess_sq")
+entire_data = pd.read_csv(file_Name).to_sql('preprocess_sq', con=db);
 
-data = pd.read_sql(sql="select * from scores_sq where PGN like '" + PGN + "' and SA like '" + SA + "'", con=db)
+data = pd.read_sql(sql="select * from preprocess_sq where PGN like '" + PGN + "' and SA like '" + SA + "'", con=db)
 
 #Make a list of the attributes which goes into first row
 output_first_row = ["id", "time"]
@@ -75,7 +75,7 @@ def convert(columns_list, row):
 
 #Runs the whole script
 def run():
-    cursor.execute("SELECT COUNT(*) FROM scores_sq WHERE PGN LIKE '" + PGN + "' AND SA lIKE '" + SA + "'")
+    cursor.execute("SELECT COUNT(*) FROM preprocess_sq WHERE PGN LIKE '" + PGN + "' AND SA lIKE '" + SA + "'")
     counter = cursor.fetchone()[0]
 
     for i in range(0, counter):
