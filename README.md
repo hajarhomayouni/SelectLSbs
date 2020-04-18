@@ -9,7 +9,8 @@ Example: python3 firstscript.py KenworthData.csv 65263 0 "B5B6" </br>
 output: preprocessed.csv </br>
 
 2. Select LSBs:</br>
-pythons SelectLSbs.py preprocessed.csv </br>
+python3 SelectLSbs.py preprocessed.csv </br>
+output: a printed list of LSbs
 
 3. Evaluate using denoising and calculating the difference </br>
 ongoing work...
