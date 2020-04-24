@@ -10,9 +10,9 @@ import csv
 import sqlite3
 
 #Hard Code Value
-resolution = (1/256)#0.03125
+resolution =0.00390625#0.125#(1/256)#0.03125
 offset=0#-273
-unit="KPH"#"oil temprature (C)"
+unit="MPa"#"oil temprature (C)"
 
 #Error Check for incorrect input
 if len(sys.argv) != 4:
@@ -108,7 +108,7 @@ def convert(index):
 
     actual_value_list.append(actual_value)
     denoised_value_list.append(denoised_value)
-    avl_dvl_list.append(actual_value-denoised_value)
+    avl_dvl_list.append(abs(actual_value-denoised_value))
 
     output_row.append(actual_value)
     output_row.append(denoised_value)
