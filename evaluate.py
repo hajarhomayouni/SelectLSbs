@@ -10,7 +10,9 @@ import csv
 import sqlite3
 
 #Hard Code Value
-hard_code_value = 0.125
+resolution = (1/256)#0.03125
+offset=0#-273
+unit="KPH"#"oil temprature (C)"
 
 #Error Check for incorrect input
 if len(sys.argv) != 4:
@@ -101,8 +103,8 @@ def convert(index):
         actual_bits_string = actual_bits_string + str(data[col][index])
         denoised_bits_string = denoised_bits_string + str(data[col][index])
     
-    actual_value = int(actual_bits_string,2) * hard_code_value
-    denoised_value = int(denoised_bits_string,2) * hard_code_value
+    actual_value = int(actual_bits_string,2) * resolution+offset
+    denoised_value = int(denoised_bits_string,2) * resolution+offset
 
     actual_value_list.append(actual_value)
     denoised_value_list.append(denoised_value)
@@ -117,7 +119,7 @@ def plot():
 
     fig, ax = plt.subplots(figsize=(20,12))
     plt.xlabel("Time", fontsize=30)
-    plt.ylabel("RPM", fontsize=30)
+    plt.ylabel(unit, fontsize=30)
 
     plt.title(graph_title, fontsize=30)
 
