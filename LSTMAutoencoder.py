@@ -220,12 +220,12 @@ class LSTMAutoencoder:
     MSE={ i : mse[i] for i in range(0, len(mse) ) }
     sorted_MSE=sorted(MSE.items(), key=lambda x: x[1],reverse=True)
     print("LSbs based on reconstruction error per bit************************")
-    print(mse)
-    Threshold=np.quantile(mse, .75)
-    print("Threshold: >" +str(Threshold))
+    #print(mse)
+    Threshold=np.quantile(mse, .625)
+    #print("Threshold: >" +str(Threshold))
     LSbs=np.where(mse > Threshold)    
     setLSbs=set(list(LSbs[0]))
-    return setLSbs
+    return sorted_MSE
 
  def LSbsBasedOnREOfMutatedData(self,model, timeseries,win_size):
     #This method finds LSbs based on randomizing all bits one by one
@@ -256,14 +256,14 @@ class LSTMAutoencoder:
         mse=np.mean(mse)
         MSE[i]=mse
         mses.append(mse)
-    print("LSbs based on reconstruction error of mutated data*************************************")
-    print(mses)
-    Threshold=np.quantile(mses, .25)
-    print("Threshold: < "+ str(Threshold))
+    print("LSbs based on reconstruction error of mutated data")
+    #print(mses)
+    Threshold=np.quantile(mses, .375)
+    #print("Threshold: < "+ str(Threshold))
     sorted_MSE=sorted(MSE.items(), key=lambda x: x[1])
     LSbs=np.where(mses < Threshold)    
     setLSbs=set(list(LSbs[0]))
-    return setLSbs
+    return sorted_MSE
 
     
  def findLsbs_1(self,model, timeseries,win_size):
