@@ -1,7 +1,9 @@
 #Name: Shlok Gopalbhai Gondalia
 #Email: shlok@rams.colostate.edu
 #Date: Saturday 18, April
+from datetime import datetime
 
+print(datetime.now())
 import sys
 import pandas as pd
 from pandas import DataFrame
@@ -86,3 +88,4 @@ run()
 output_file.close()
 db.commit()
 db.close()
+print(datetime.now())
