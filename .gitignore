@@ -1,3 +1,4 @@
 datasets/
 scores.sqlite
+*.sqlite
 *.png
