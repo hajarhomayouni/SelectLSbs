@@ -45,10 +45,7 @@ columns_list__to_modify = []
 """for i in range (0, len(columns), 3):
     columns_list__to_modify.append(columns[i:i+3])"""
 
-columns_index__to_modify = []
-
-for i in range (0, len(columns), 2):
-    columns_index__to_modify.append(int(columns[i:i+1]))
+columns_index__to_modify = columns.split(",")
 
 for i in range(0, len(csv_column_list)):
     if i in columns_index__to_modify:
