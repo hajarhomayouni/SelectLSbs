@@ -1,5 +1,7 @@
 datasets/
+figures/
 scores.sqlite
 *.sqlite
 *.png
 *.sqlite
+
