@@ -1,5 +1,5 @@
 from datetime import datetime
-print(datetime.now())
+t1=datetime.now()
 from LSTMAutoencoder import LSTMAutoencoder
 from DataCollection import DataCollection
 import sys
@@ -33,5 +33,8 @@ for item in six_LSbs_1:
         majorVoting.append(item[0])
 print("LSbs based on Major Voting")
 print("LSbs: "+ str(majorVoting))
-print(datetime.now())
+t2=datetime.now()
+print("TT**************")
+TT=t2-t1
+print(TT.total_seconds())
 
