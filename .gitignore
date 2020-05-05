@@ -4,4 +4,4 @@ scores.sqlite
 *.sqlite
 *.png
 *.sqlite
-
+__pycache__/ 
