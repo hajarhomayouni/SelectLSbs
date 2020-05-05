@@ -17,11 +17,13 @@ lSTMAutoencoder=LSTMAutoencoder()
 win_size=lSTMAutoencoder.identifyWindowSize(dataFrame)
 bestConstraintDiscoveryModel, dataFrameTimeseries=lSTMAutoencoder.tuneAndTrain(dataFrame,win_size)
 LSbs_1=lSTMAutoencoder.LSbsBasedOnREPerBit(bestConstraintDiscoveryModel,dataFrame,win_size)
+#print([x[0] for x in LSbs_1])
 six_LSbs_1 = LSbs_1[:6]
 print([x[0] for x in six_LSbs_1])
 LSbs_2=lSTMAutoencoder.LSbsBasedOnREOfMutatedData(bestConstraintDiscoveryModel,dataFrame,win_size)
 #majorVoting=LSbs_1.intersection(LSbs_2)
 majorVoting=[]
+#print([x[0] for x in LSbs_2])
 six_LSbs_2 = LSbs_2[:6]
 print([x[0] for x in six_LSbs_2])
 
