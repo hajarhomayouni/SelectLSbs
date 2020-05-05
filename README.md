@@ -1,5 +1,5 @@
 # SelectLSbs
-Using LSTM-Autoencoder for Optimal Selection of Least Significant Bits for Watermarking of Electronic Control Unit Packets in Heavy Vehicles
+Using LSTM-Autoencoder for Optimal Selection of Least Significant Bits from Electronic Control Unit Packets in Heavy Vehicles
 </br>
 
 How to use:</br>
@@ -18,9 +18,7 @@ output: a printed list of LSbs
   resolution =0.00390625</br>
   offset=0</br>
   unit="MPa"</br> 
-  </br>
-  Note: This information can be found in the SAE-J1939 standardized protocol for heavy vehicles.</br> 
-  </br>
+  *Note*: This information can be found in the SAE-J1939 standardized protocol for heavy vehicles.</br> 
   b) python3 evaluate.py [preprocessed.csv] [LSbs] [denoising value (i.e., 0 or 1)] </br>
   Example: python3 evaluate.py TU36_002_1_61444_0_B3B4.csv "1,2,3,4,5,6,7" 0 </br>
   Output: A plot showing the actual (blue line) and denoised (orange line) values of data records over time based on the selected LSbs  
